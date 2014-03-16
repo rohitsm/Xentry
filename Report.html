@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+    <title>Incident Reporting Form</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="report.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+  
+    <div class="page-header">
+      <h1>Incident Reporting Center</h1>
+    </div>
+  
+
+    <div class="well well-lg">
+      <form class="form-horizontal" role="form" action="" method="post">
+
+        <!-- Full Name -->
+
+        <div class="form-group">
+          <label for="inputName" class="col-sm-3 control-label">Name</label>
+          <div class="col-sm-2">
+            <input type="text" class="form-control" id="inputFirstName" placeholder="First" required>
+          </div>
+          <div class="col-sm-2">
+            <input type="text" class="form-control" id="inputMiddleName" placeholder="Middle">
+          </div>
+          <div class="col-sm-2">
+            <input type="text" class="form-control" id="inputLastName" placeholder="Last">
+          </div>
+        </div>
+
+        <!-- Address -->
+        
+        <div class="form-group">
+          <label for="inputAddress" class="col-sm-3 control-label">Address</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" id="address" placeholder="Address" required>
+          </div>
+        </div>
+
+        <!-- Block No. and Postal Code-->
+
+        <div class="form-group">
+          <label for="inputBlockNo" class="col-sm-4 control-label">Block No.</label>
+          <div class="col-sm-2">
+            <input type="text" class="form-control" id="inputBlockNo" placeholder="Block No.">
+          </div>
+          <label for="inputPostalCode" class="col-sm-2 control-label" id="postalCode" style="text-align: left">Postal Code</label>
+          <div class="col-sm-2">
+            <input style="position: left" type="number" class="form-control" id="inputPostalCode" placeholder="Postal Code">
+          </div>
+        </div>
+
+        <!-- Mobile No. -->
+
+        <div class="form-group">
+          <label for="inputMobile" class="col-sm-3 control-label">Mobile No.</label>
+          <div class="col-sm-1">
+            <input type="number" class="form-control" id="inputMobile" placeholder="+65">
+          </div>
+          <div class="col-sm-3">
+            <input type="number" class="form-control" id="inputMobile" placeholder="Mobile Number" required>
+          </div>
+        </div>
+
+        
+        <!--  Type of Assistance Requested -->
+
+        <div class="col-sm-3 control-label">
+          <h5><label for="inputMobile">Type of Assistance Requested</label></h5>
+        </div>
+        <div class="checkbox col-sm-6">
+          <label>
+            <input type="checkbox" value="option1" checked> Emergency Ambulance
+          </label>
+          <br>
+          <label>
+            <input type="checkbox" value="option2" unchecked> Rescue and Evacuation
+          </label>
+          <br>
+          <label>
+            <input type="checkbox" value="option3" unchecked> Fire-Fighting
+          </label>
+          <br>
+          <label>
+            <input type="checkbox" value="option4" unchecked> Gas Leak Control - Singapore Power
+          </label>        
+        </div>
+
+        <!-- Submit and Cancel buttons -->
+        <div class="container-fluid ">
+          <div class="col-sm-offset-4 col-sm-5" id="cancelSubmit">
+            <button type="submit" class="btn btn-lg btn-danger">Cancel</button>
+            <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+          </div>
+        </div>
+
+      </form>  <!-- End of form-horizontal -->
+    </div> <!-- End of container-fluid -->
+
+    <!-- Copyright and Footer-->
+
+    <!-- <div class="mastfoot">
+      <div class="inner">
+        <p>Copyright © 2014 Xentry Inc. All rights reserved</p>
+      </div>
+    </div> -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  </body>
+</html>
