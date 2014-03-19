@@ -43,11 +43,13 @@
           
           <div>
 
-            <form class="form-signin" role="form" action="report.html" method="post">
+            <form class="form-signin" role="form" method="post" action="login.php">
+
+
               <h2 class="form-signin-heading">Please sign in</h2>
               
-              <input type="email" class="form-control" placeholder="Email address" required autofocus>
-              <input type="password" class="form-control" placeholder="Password" required>
+              <input type="email" class="form-control" placeholder="Email address" name="email" required autofocus>
+              <input type="password" class="form-control" placeholder="Password" name="password" required>
               
               <label class="checkbox">
                 <input type="checkbox" value="remember-me"> Remember me
@@ -55,7 +57,7 @@
               
               
               <div class="col-sm-6">
-                <button type="submit" class="btn-block btn-primary btn">Sign In</button>
+                <button type="submit" name="Submit" class="btn-block btn-primary btn">Sign In</button>
               </div>
               <div class="col-sm-6">
                 <button type="submit" class="btn-block btn-default btn">Forgot Password</button>
