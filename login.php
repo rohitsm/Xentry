@@ -1,12 +1,14 @@
 <?php
 
+include('dbconfig.php');
+
 // Set a master email and password for verificatin
 // to be replaced with values from the DB
-$MasterEmail = "admin@xentry.com";
-$MasterPassword = "test123";
+// $MasterEmail = "admin@xentry.com";
+// $MasterPassword = "test123";
 
-$flagEmail = 0;
-$flagPassword = 0;
+// $flagEmail = 0;
+// $flagPassword = 0;
 
 // // Regular Expression for email Check
 $regex = '/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/';
@@ -15,69 +17,56 @@ $regex = '/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+
 // $email = mysql_real_escape_string($_GET["email"]);
 // $password = mysql_real_escape_string($_GET["password"]);
 
-$email = $_POST["email"];
-$password = $_POST["password"];
-
 // print_r($_GET);
-echo("email= " . $email);
-echo ("password= ". $password);
+// echo("email= " . $email);
+// echo ("password= ". $password);
 // phpinfo();
 
 
 if (isset($_POST['Submit'])) { // POST is not null
-// 	// session_start();
+	// session_start();
 	// phpinfo();
 
 	// Array stores all the error messages
-	// $error = array();
+	$error = array();
 
-// 	// Check whether email matches the format
-	if (preg_match($regex, $_POST["email"])){
-		echo("preg_match");		
-		// Verify email
+	if (empty($_POST['email'])) {
+		// Email entry is blank
+		$error[] = "Please enter your email ";
+	}
 
-	
-		if (empty($email)) {
-			// Email entry is blank
-			$error[] = "Please enter your email ";
-		}
-		elseif ($email == $MasterEmail){
-			// Email is correct as per database records
-			$flagEmail = 1;
-			echo("$flagEmail = 1");	
+	else {
+
+		// Check whether email matches the format
+		if (preg_match($regex, $_POST["email"])){
+			// echo("preg_match");		
+			// Verify email
+			$email = $_POST["email"];
+			$password = $_POST["password"];
 		}
 		else {
-			$error = "Incorrect email or password";
+			$error[] = "Incorrect email or password";
 		}
 	}
 
-	// Verify password 
-	// if (empty($password)){
-	// 	echo("Invalid password");
-	// }
-
-	if ($password == $MasterPassword) {
-		// Password is correct as per database records
-		$flagPassword = 1;
-		echo("$flagPassword = 1");
+	// If there are no errors, send to the database
+	if(empty($error)) {
+		// Check the email address in the records
+		$query = "select * from Login where (Email='$email' 
+				  and Password='$password')";
+		$result = mysqli_query($conn, $query) or die(mysqli_error());
+		$num_row = mysqli_num_rows($result);
+		$row = mysqli_fetch_array($result);
+		if($num_row == 1){
+			header("Location: report.html");
+			exit;
+		}
+		else{
+			header("Location: login.html");	
+			exit;
+		}
 	}
-	else {
-		$error[] = "Invalid email id or password";
-		// echo("Error email "); 
-	}
+	// mysql_close($conn);
+} // if isset() 	
 
-	$error = "Incorrect email or password";
-}
-
-
-if ($flagEmail && $flagPassword){
-	// Both email and password are verified
-	header("Location: report.html");
-}
-
-else {
-	header("Location: login.html");	
-	exit;
-}
-// echo("End");
 ?>
