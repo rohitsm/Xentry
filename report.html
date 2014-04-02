@@ -89,42 +89,47 @@
         
         <!--  Type of Assistance Requested -->
 
-        <div class="col-sm-3 control-label">
-          <h5><label for="inputMobile">Type of Assistance Requested</label></h5>
-        </div>
-        <div class="checkbox col-sm-6">
-          <label>
-            <input type="checkbox" value="option1" checked> Emergency Ambulance
-          </label>
-          <br>
-          <label>
-            <input type="checkbox" value="option2" unchecked> Rescue and Evacuation
-          </label>
-          <br>
-          <label>
-            <input type="checkbox" value="option3" unchecked> Fire-Fighting
-          </label>
-          <br>
-          <label>
-            <input type="checkbox" value="option4" unchecked> Gas Leak Control - Singapore Power
-          </label>        
+        <div class = "form-group">
+
+          <div class="col-sm-3 control-label">
+            <h5><label for="inputMobile">Type of Assistance Requested</label></h5>
+          </div>
+          <div class="checkbox col-sm-6">
+            <label>
+              <input type="checkbox" value="option1" checked> Emergency Ambulance
+            </label>
+            <br>
+            <label>
+              <input type="checkbox" value="option2" unchecked> Rescue and Evacuation
+            </label>
+            <br>
+            <label>
+              <input type="checkbox" value="option3" unchecked> Fire-Fighting
+            </label>
+            <br>
+            <label>
+              <input type="checkbox" value="option4" unchecked> Gas Leak Control - Singapore Power
+            </label>        
+          </div>
         </div>
 
         <!-- Additional Remarks -->
 
         <div class="form-group">
-          <label for="inputRemark" class="col-sm-4 control-label">Additional Remarks</label>
-          <div class="col-sm-5">
+          <label for="inputRemark" id="remarks" class="col-sm-3 control-label">Additional Remarks</label>
+          <div class="col-sm-6">
             <textarea type="text" class="form-control" id="remarks" placeholder="Additional remarks (If any)" rows="3"></textarea>
           </div>
         </div>
 
 
         <!-- Submit and Cancel buttons -->
-        <div class="container-fluid ">
-          <div class="col-sm-offset-4 col-sm-5" id="cancelSubmit">
-            <button type="submit" class="btn btn-lg btn-primary">Submit</button>
-            <button type="submit" class="btn btn-lg btn-danger">Cancel</button>
+        <div class="form-group ">
+          <div class="col-sm-offset-4 col-sm-2" id="cancelSubmit">
+            <button type="submit" class="btn btn-lg btn-primary btn-block">Submit</button>
+          </div>
+          <div class="col-sm-2" id="cancelSubmit">
+            <button type="submit" class="btn btn-lg btn-danger btn-block">Cancel</button>
           </div>
         </div>
 
